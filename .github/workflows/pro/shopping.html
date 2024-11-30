@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر تصميم الفساتين</title>
+    <link rel="stylesheet" href="dress.css">
+</head>
+<body >
+    <header>
+        <div class="header-container">
+            <h1 class="logo">متجر فساتين الزفاف</h1>
+            <nav class="main-nav"> 
+        <nav class="navbar">
+            <ul>
+                <li><a href="dress.html">الرئيسية</a></li>
+                <li><a href="ser.html">الخدمات</a></li>
+                <li><a href="about.html">عن المتجر</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+                <li><a href="shopping.html">
+                    🛒
+                    <span class="cart-count">3</span>
+                </a></li>>
+            </ul>
+        </nav>
+        
+        
+        <form class="search-box">
+            <input type="text" placeholder="ابحثي عن فستانك المثالي..." name="search">
+            <button type="submit">بحث</button>
+        </form>
+    </header>
+
+   <!-- محتوى سلة التسوق -->
+   <section class="cart-container">
+    <h2>سلة التسوق</h2>
+
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>المنتج</th>
+                <th>السعر</th>
+                <th>الكمية</th>
+                <th>الإجمالي</th>
+                <th>الإجراءات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="cart-item">
+                        <img src="dr222.jpg" alt="فستان زفاف" class="cart-item-img">
+                        <span>فستان زفاف مميز</span>
+                    </div>
+                </td>
+                <td>6000 ريال</td>
+                <td>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                </td>
+                <td class="total-price">6000 ريال</td>
+                <td>
+                    <button class="remove-btn">حذف</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-item">
+                        <img src="mukp.jpg" alt="حجاب عروس" class="cart-item-img">
+                        <span>ميكب عروس</span>
+                    </div>
+                </td>
+                <td>2000 ريال</td>
+                <td>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                </td>
+                <td class="total-price">2000 ريال</td>
+                <td>
+                    <button class="remove-btn">حذف</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="cart-summary">
+        <p>المجموع الكلي: <span id="total-price">8000 ريال</span></p>
+        <button class="checkout-btn">الدفع الآن</button>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <!-- قسم عن المتجر -->
+        <div class="footer-section about">
+            <h3>عن المتجر</h3>
+            <p>
+                متجر فساتين الزفاف يقدم أروع التصميمات والخدمات المخصصة لعروس أحلامك.  
+                هدفنا هو مساعدتك في صنع لحظات لا تنسى
+            </p>
+        </div>
+
+        
+        <!-- قسم وسائل التواصل الاجتماعي -->
+        <div class="footer-section social">
+            <h3>تابعنا</h3>
+            <p>            d.f.2022: انستقرام</p>
+            <p>            d.f.2022: تويتر</p>
+            <p>            d.f.2022: سناب شات</p>
+            <p>            d.f.2022@gmail.com: ايميل</p>
+        </div>
+    </div>
+
+    <!-- حقوق الملكية -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 جميع الحقوق محفوظة | <span>متجر فساتين الزفاف</span></p>
+    </div>
+</footer>
+</body>
+</html>
+
+<script src="script.js"></script> <!-- ربط ملف JavaScript -->
+</body>
+</html>

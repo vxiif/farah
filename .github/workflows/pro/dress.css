@@ -1,0 +1,872 @@
+/* Global Styles */
+body, h1, h2, h3, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #d8c1c8;
+    color: #080204;
+}
+
+header {
+    
+
+    background-color: #e2d9dd;
+    background-image: url('d5.jpg');
+    
+    background-size: cover ;
+        background-repeat: no-repeat;
+   background-position: 100%;
+       
+   
+}
+
+video{
+    
+        width: 180%; 
+        max-width: 100%; 
+       
+      
+}
+
+/* تصميم شريط التنقل */
+.navbar {
+    background-color: #b784a7; /* لون خلفية الشريط */
+    padding: 10px 20px; /* مسافة داخلية */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل لإضافة عمق */
+    position: sticky; /* لجعل القائمة تلتصق بأعلى الصفحة عند التمرير */
+    top: 0; /* موقع القائمة */
+    z-index: 1000; /* تأكيد ظهور القائمة فوق جميع العناصر */
+}
+
+/* قائمة الروابط */
+.navbar ul {
+    list-style: none; /* إزالة النقاط */
+    display: flex; /* جعل العناصر تظهر بجانب بعضها */
+    justify-content: space-evenly; /* توزيع العناصر مع مسافة متساوية بينهما */
+    margin: 0;
+    padding: 0;
+}
+
+/* عناصر القائمة */
+.navbar ul li {
+    margin: 0 25px; /* زيادة المسافة بين العناصر */
+}
+
+/* الروابط */
+.navbar ul li a {
+    text-decoration: none; /* إزالة الخط السفلي */
+    color: #fff; /* لون النص */
+    font-size: 1.2em; /* حجم خط مناسب */
+    font-family: 'Arial', sans-serif; /* خط واضح وبسيط */
+    padding: 10px 20px; /* مسافة داخلية حول النص */
+    border-radius: 5px; /* زوايا مستديرة للروابط */
+    transition: background-color 0.3s ease, color 0.3s ease; /* تأثير حركة ناعم */
+    letter-spacing: 1.5px; /* زيادة المسافة بين الحروف */
+}
+
+/* تأثير عند التمرير فوق الرابط */
+.navbar ul li a:hover {
+    background-color: #fff; /* لون خلفية عند التمرير */
+    color: #a1969e; /* لون النص عند التمرير */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* ظل خفيف للنص */
+}
+
+/* تصميم للقوائم على الأجهزة الصغيرة */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* عرض العناصر في عمود */
+        align-items: center; /* توسيط العناصر */
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* مسافة عمودية بين العناصر */
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .navbar ul li {
+        margin: 10px 0; 
+    }
+}
+
+
+
+
+.search-box {
+    margin-top: 15px;
+}
+
+.search-box input {
+    padding: 8px;
+    width: 200px;
+}
+
+
+/* حاوية الصور */
+.image-gallery {
+    display: flex;
+    gap: 150px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 80px;
+}
+
+/* حاوية الصورة الفردية */
+.image-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* تأثير الظل */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير عند التمرير */
+}
+
+/* تأثير عند التمرير على الصورة */
+.image-container:hover {
+    transform: scale(1.05); /* تكبير الصورة قليلاً */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* زيادة الظل عند التمرير */
+}
+
+/* تعديل الصورة داخل الحاوية */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لتغطية المساحة كاملة */
+    transition: opacity 0.3s ease;
+}
+
+/* التغطية بلون خلفية شفاف مع نص */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(163, 112, 138, 0.4); /* خلفية شفافة داكنة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px;
+}
+
+/* نص العنوان في الخلفية */
+.overlay h3 {
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* تأثير عند التمرير على الحاوية */
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+
+.search-box button {
+    padding: 8px;
+    background-color: #ee9aa8;
+    color: white;
+    border: none;
+}
+
+section {
+    padding: 20px;
+}
+
+/* تصميم التذييل */
+.main-footer {
+    background: linear-gradient(135deg, #79546d, #f0b6d8);
+    color: white;
+    padding: 50px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* الحاوية الرئيسية للتذييل */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+/* كل قسم في التذييل */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* عناوين الأقسام */
+.footer-section h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* نص قسم "عن المتجر" */
+.footer-section p {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #f9f9f9;
+}
+
+/* قائمة الروابط */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #f9f9f9;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #333;
+}
+
+/* أيقونات وسائل التواصل الاجتماعي */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5em;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #333;
+    transform: scale(1.2);
+}
+
+/* حقوق الملكية */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #f9f9f9;
+}
+
+.footer-bottom span {
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 20px auto;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+form button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+}
+
+img{
+
+width: 80%;
+height: 35%;
+padding-left: 10%;
+}
+h2 {
+    text-align: center;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 400%;
+
+}
+p{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 200%;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #b784a7;
+}
+
+header p {
+    margin: 5px 0 15px;
+    font-size: 1.2em;
+    color: #555;
+}
+.services {
+    display: flex;
+    flex-wrap: wrap; /* للسماح بالتفاف العناصر إلى الصف التالي */
+    justify-content: center; /* محاذاة العناصر أفقيًا في المنتصف */
+    gap: 80px; /* مسافة بين العناصر */
+    padding: 20px;
+}
+
+.service {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: calc(50% - 20px); /* عرض 50% مع مراعاة المسافة بين العناصر */
+    max-width: 400px; /* الحد الأقصى لعرض العنصر */
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* لجعل العنصر الأخير يمتد بالكامل */
+.service:nth-child(3) {
+    width: calc(100% - 20px); /* عرض العنصر بالكامل */
+}
+
+.service img {
+    width:60%; /* جعل الصور أصغر بنسبة 80% من عرض العنصر */
+    height: auto; /* الحفاظ على نسبة الطول إلى العرض */
+    margin: 10px auto; /* إضافة مسافة حول الصور لمظهر أفضل */
+    border-bottom: 2px solid #b784a7;
+}
+
+
+.service h2 {
+    font-size: 1.5em;
+    color: #b784a7;
+    margin: 10px 0;
+}
+
+.service p {
+    font-size: 1em;
+    padding: 10px;
+    color: #555;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 2px solid #dd7f7f;
+    margin-top: 20px;
+}
+
+.custom-paragraph {
+    font-family: 'Merriweather', serif; /* خط احترافي مناسب للنصوص الفاخرة */
+    font-size: 1.6em; /* حجم خط كبير لجعل النص بارزًا */
+    line-height: 2; /* مسافة واسعة بين السطور لراحة القراءة */
+    color: #2c2c2c; /* لون نص متوازن بين الرسمي والجذاب */
+    text-align: justify; /* توزيع النص بالتساوي */
+    margin: 30px auto; /* مسافة خارجية لتوسيط الفقرة */
+    max-width: 800px; /* عرض مريح للعين */
+    padding: 20px; /* مسافة داخلية لإبراز النص */
+    background: linear-gradient(145deg, #ffffff, #f8f8f8); /* خلفية بتدرج خفيف */
+    border-radius: 15px; /* زوايا مستديرة لمظهر ناعم */
+    border-left: 8px solid #b784a7; /* شريط عمودي جذاب */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* ظل متقن لإضافة عمق */
+    position: relative; /* للتحكم في العناصر الداخلية */
+    overflow: hidden; /* منع تجاوز العناصر */
+}
+
+.custom-paragraph::before {
+    content: '❝';
+    font-size: 3em;
+    color: #b784a7;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    opacity: 0.2; /* خفوت لتأثير راقٍ */
+}
+
+.custom-paragraph::after {
+    content: '❞';
+    font-size: 3em;
+    color: #b784a7;
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    opacity: 0.2;
+}
+
+.custom-paragraph .highlight {
+    color: #b784a7; /* إبراز النص باللون المميز */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.custom-paragraph em {
+    font-style: italic; /* ميل النصوص المهمة لإبرازها */
+    color: #6a6a6a;
+}
+
+.custom-paragraph strong {
+    font-weight: bold;
+    color: #b784a7;
+}
+/* تصميم قسم الخدمات */
+.services {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    color: #b784a7;
+    margin-bottom: 30px;
+    font-family: 'Georgia', serif;
+}
+
+/* الحاوية التي تحتوي على الخدمات */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* عنصر الخدمة */
+.service-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تأثير عند التمرير على عنصر الخدمة */
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* الصور داخل الخدمة */
+.service-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* عنوان الخدمة */
+.service-item h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* نص الخدمة */
+.service-item p {
+    font-size: 1em;
+    color: #666;
+    margin: 0;
+}
+
+/* الفاصل بين الأقسام */
+.section-divider {
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(to right, #b784a7, #f0f0f0, #b784a7); /* تدرج لوني */
+    margin: 40px auto; /* تباعد بين الفاصل والأقسام */
+    border-radius: 5px;
+}
+
+/* تحسين عرض الأقسام */
+.dresses, .services {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* قسم الفساتين */
+.dresses h2, .services h2 {
+    font-size: 2.5em;
+    color: #b784a7;
+    margin-bottom: 30px;
+    font-family: 'Georgia', serif;
+}
+
+/* تصميم قسم الخدمات */
+.services {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    color: #b784a7;
+    margin-bottom: 30px;
+    font-family: 'Georgia', serif;
+}
+
+/* الحاوية التي تحتوي على الخدمات */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* عنصر الخدمة */
+.service-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تأثير عند التمرير على عنصر الخدمة */
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* الصور داخل الخدمة */
+.service-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* عنوان الخدمة */
+.service-item h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* نص الخدمة */
+.service-item p {
+    font-size: 1em;
+    color: #666;
+    margin: 0;
+}
+
+
+/* التصميم الأساسي */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+
+
+    
+
+
+
+/* نص العنوان */
+.contact-header h1 {
+    font-size: 2.8em;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(146, 105, 126, 0.7);
+}
+
+/* النص الفرعي */
+.contact-header p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+    line-height: 1.5;
+    color: #f1f1f1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* نموذج التواصل */
+.contact-form {
+    padding: 40px 20px;
+    background: #f7f7f7;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    font-size: 2em;
+    color: #b784a7;
+    margin-bottom: 15px;
+}
+
+.contact-form p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-form form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #b784a7;
+    box-shadow: 0 0 5px rgba(183, 132, 167, 0.5);
+}
+
+textarea {
+    resize: none;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background-color: #b784a7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #a06695;
+}
+
+/* تصميم تجاوب */
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 30px 15px;
+    }
+
+    .submit-btn {
+        font-size: 1em;
+    }
+}
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #fff;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info-item {
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+}
+
+.info-item i {
+    font-size: 2.5em;
+    color: #b784a7;
+    margin-bottom: 10px;
+}
+
+.info-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.info-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+
+/* خلفية بلون كامل لصفحة "اتصل بنا" */
+body.contact-page {
+    background-color: #b88b8b; /* اختر لونًا يناسبك */
+    color: #333; /* لون النصوص */
+    height: 100vh; /* يجعل الخلفية تغطي كامل الشاشة */
+    margin: 0;
+}
+
+/* يمكن تعديل النصوص الداخلية لتناسب اللون */
+.contact-header {
+    padding: 20px;
+    text-align: center;
+    color: #b784a7; /* لون النصوص */
+}
+
+/* محتوى سلة التسوق */
+.cart-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #b784a7;
+    margin-bottom: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th, .cart-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: #f5f5f5;
+}
+
+.cart-table td {
+    background-color: #fafafa;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item-img {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.remove-btn {
+    background-color: #ff6666;
+    color: white;
+    padding: 8px 15px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #e55353;
+}
+
+.cart-summary {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+
+.cart-summary p {
+    margin-bottom: 15px;
+}
+
+.checkout-btn {
+    background-color: #b784a7;
+    color: white;
+    font-size: 1.3em;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #a06695;
+}
+
